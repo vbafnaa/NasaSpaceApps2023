@@ -1,4 +1,6 @@
-﻿# NasaSpaceApps2023
+﻿# NasaSpaceApps2023 - Immersed in the Sounds of Space
+
+Idea Approach: 
 
 Innovations in data visualization continue to expand our understanding of complex information. One such groundbreaking technique harnesses generative AI and RGB color mapping to create a unique form of sonification, transforming videos into auditory experiences by mapping frequency to the Root Mean Square (RMS) value of brightness.
 
