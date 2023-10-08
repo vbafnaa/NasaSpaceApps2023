@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="row" style="background-color: #000;">
+  <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark" >
+    <div class="container-fluid" style="padding: 5px;">
+      <div style="margin: 0 0 0 10px">
+      <img src="media\5760263.png" alt="" width="30" height="24" style="margin: 0 0 0 10px">
+      <a class="navbar-brand" style="margin: 0 0 0 10px">SONIFY</a>
+
+      </div>
+      <form class="d-flex" role="search" style="margin: 0 20px 0 0">
+        <a class="navbar-brand" style="margin: 0 10px 0 10px">Home</a>
+        <a class="navbar-brand" style="margin: 0 10px 0 10px">Features</a>
+        <a class="navbar-brand" style="margin: 0 30px 0 10px">Contact Us</a>
+
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container" style=" width: 100vw; height: 100vh; padding: 20vh 0 0 10vw; ">
+    <div class="row">
+    <div class="col-md-6" style="width:40vw " >
+      <h1 class="display-4" style="color:#fff">Welcome to SONIFY!</h1>
+      <h5 class="lead" style="color:#ddd">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+        featured content or information.</h5>
+      <hr class="my-4" style="color:#fff">
+      <p style="color:#fff">It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <br>
+      <a class="btn btn-lg"  style="color: #fff; background-color: #00008B; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#591792'" onmouseout="this.style.backgroundColor='#00008B'"  href="https://hubblesite.org/videos?Type=Scientific%20Visualizations&keyword=flight" target="_blank" role="button">Check Out the Hubble site for Inspiration</a>
+      <br><br><br><br>  
+
+      <p style="color:#aaa; ">scroll down and try it out yourself!</p>
+      
+    </div>
+
+    <div class="col-md-6"  style="margin-left: 20px;">
+      <img src="media\milkywaygif.gif" alt="Description of the GIF" style="width: 100%; height: auto;">
+    </div>
+
+    </div>
+  </div>
+  
+  <div  id="bottomDiv" class="row" style="background-image: url('{% static "images/soundwave1.jpeg"%}')"; >
+    {% comment %} <img src="static\images\soundwave1.jpeg" alt="Description of the GIF" style="width: 100%; height: auto;"> {% endcomment %}
+    <div class="col-3"  >
+    </div>
+
+    <div class="col-6 " style=" height: 100vh;" >
+      <p style="color:white">go wild</p>
+      <div class="card w-80 mb-3" style="margin-top:25px ">
+        <div class="card-body" style="background-color:#EDE2F0">
+          <h5 class="card-title" style="text-align: center;">Upload a Video of Your Choice</h5>
+          <form method="post" action="{% url 'home' %}" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="mb-3">
+                  <label for="formFile" class="form-label">Choose a video file:</label>
+                  <input class="form-control" style="width:30vw" type="file" id="formFile" name="xieauo"  required>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="filter" id="flexRadioDefault1" value="auvi" required>
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Audio + Video
+                  </label>
+                </div>
+
+                <div class="form-check" >
+                  <input class="form-check-input" type="radio" name="filter" id="flexRadioDefault2" value="au" checked required>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Only Audio
+                  </label>
+                </div>
+                  <br>
+                  
+                    <button id="generateBtn" type="submit" class="btn" style="background-color: #00008B !important; color:#fff" onmouseover="this.style.backgroundColor='#591792'" onmouseout="this.style.backgroundColor='#00008B'">
+                      Generate
+                  </button>
+                              
+                  
+                <button id="loadingBtn" class="btn btn-primary" type="button" style="background-color: #00008B !important; color:#fff" disabled>
+                  <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+                  <span role="status">Generating please wait...</span>
+                </button>
+                
+          </form>  
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if mssg == '0' %}
+<h1>OOps error</h1>
+{% endif %}
+<div style="background-color: #000; height:100vh">
+ 
+<div >
+
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark" >
+  <div class="container-fluid" style="padding: 5px;">
+    <div style="margin: 0 0 0 10px">
+    <img src="media\5760263.png" alt="" width="30" height="24" style="margin: 0 0 0 10px">
+    <a class="navbar-brand" style="margin: 0 0 0 10px">SONIFY</a>
+
+    </div>
+    <form class="d-flex" role="search" style="margin: 0 20px 0 0">
+      <a class="navbar-brand" style="margin: 0 10px 0 10px">Home</a>
+      <a class="navbar-brand" style="margin: 0 10px 0 10px">Features</a>
+      <a class="navbar-brand" style="margin: 0 30px 0 10px">Contact Us</a>
+
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</div>
+
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+{% if mssg == '1' %}
+
+
+<div class="card w-100 mb-3" style="margin-top:25px ">
+
+    <div class="card-body" style="background-color:#EDE2F0; ">
+      <h5 class="card-title">Generated Audio</h5>
+      <p>The required <b> Generated Audio</b> is:</p>
+      <audio controls>
+        <source src="{{audio.au_file.url}}" type="audio/wav">
+      </audio>
+      <br>
+      <a href="/" class="btn" style="margin-top:25px; background-color: #00008B !important; color:#fff" onmouseover="this.style.backgroundColor='#591792'" onmouseout="this.style.backgroundColor='#00008B'">Back to home</a>
+    </div>
+  </div>
+
+  {% else %}
+
+  <div class="card column w-100 mb-3" style="margin-top:25px ">
+    <div class="card-body" style="background-color:#EDE2F0; ">
+      <h5 class="card-title">Generated Audio+Video</h5>
+      <p>The required video, integrated with the <b> Generated Audio</b> is:</p>
+      <video width="500" height="300" controls style="margin:auto">
+        <source src="{{video.auvi_file.url}}" type="video/mp4">
+    </video>
+    <div>
+      <a href="/" class="btn" style="margin-top:25px; background-color: #00008B !important; color:#fff" onmouseover="this.style.backgroundColor='#591792'" onmouseout="this.style.backgroundColor='#00008B'">Back to home</a>
+    </div>
+    </div>
+  </div>
+
+{% endif %}
+</div>
+<div class="col-3"></div>
+</div>
+</div>
+
+
+{% endblock %}

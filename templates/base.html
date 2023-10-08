@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa</title>
+
+    <!-- for the bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <style>
+        #bottomDiv{
+            background-image: url('static\images\soundwave1.jpeg');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+    {% block content %}
+    <!-- content of other pages will come here -->
+    {% endblock %}
+
+    <!-- 
+        everytime u add css 
+        to diplay url eg =>   ref="{static 'ur_url' }"
+     -->
+     <script>
+        document.getElementById("loadingBtn").style.display = "none";
+
+    // Add an event listener to the first button (Generate) to toggle visibility
+    document.getElementById("generateBtn").addEventListener("click", function () {
+        // Hide the Generate button
+        this.style.display = "none";
+
+        // Show the loading button
+        document.getElementById("loadingBtn").style.display = "inline-block";
+
+        // Simulate some loading process (you can replace this with your actual logic)
+        setTimeout(function () {
+            // After the loading process is complete, you can show the Generate button again
+            document.getElementById("generateBtn").style.display = "inline-block";
+            // Hide the loading button
+            document.getElementById("loadingBtn").style.display = "none";
+        }, 20000); // Adjust the time as needed
+    });
+     </script>
+    
+</body>
+</html>
