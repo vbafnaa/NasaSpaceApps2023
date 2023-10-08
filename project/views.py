@@ -45,7 +45,7 @@ def map_brightness_to_note(brightness):
     min_brightness = 0  # Adjust as needed based on your video content
     max_brightness = 255
     min_note_freq = 50  # Adjust the starting frequency as needed
-    max_note_freq = 500  # Adjust the ending frequency as needed
+    max_note_freq = 800  # Adjust the ending frequency as needed
     mapped_freq = np.interp(brightness, [min_brightness, max_brightness], [min_note_freq, max_note_freq])
     return mapped_freq
 
